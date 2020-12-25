@@ -1,0 +1,43 @@
+.SideDrawer {
+    position: fixed;
+    width: 280px;
+    max-width: 40%;
+    background-image: linear-gradient(rgb(230, 176, 61) 20%,wheat 60%);
+    padding: 32px 64px;
+    font-weight: bold;
+    top:0;
+    left: 0;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+    z-index: 200;
+    border-right: 4px solid wheat;
+    font-size: 1.25rem;
+}
+
+@media (min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+.Logo {
+    height: 11%;
+    margin-bottom: 32px;
+    display: flex;
+    
+}
+
+.Logo p {
+    position: absolute;
+    top: 25px;
+    left: 190px;
+    font-size: 1.2rem;
+}
