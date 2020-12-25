@@ -4,10 +4,24 @@ import classes from './Input.css';
 
 const input = ( props ) => {
     let inputElement = null;
-    const inputClasses = [classes.InputElement];
+    let validationError = null;
+    let inputClasses = [classes.InputElement]; 
 
     if (props.invalid && props.shouldValidate && props.touched) {
         inputClasses.push(classes.Invalid);
+    }
+
+
+    if (props.touched && props.invalid && props.valueType) {
+        
+
+        if (props.valueType === "password") {
+             validationError = (<p className = {classes.ValidationMessage}>{props.valueType} must be atleast 6 characters!</p>);
+
+        } else {
+            validationError = (<p className = {classes.ValidationMessage}>Please enter a valid {props.valueType}!</p>);
+
+        }
     }
 
     switch ( props.elementType ) {
@@ -51,6 +65,7 @@ const input = ( props ) => {
         <div className={classes.Input}>
             <label className={classes.Label}>{props.label}</label>
             {inputElement}
+            {validationError}
         </div>
     );
 

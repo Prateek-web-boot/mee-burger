@@ -30,3 +30,8 @@
     border: 1px solid red;
     background-color: #FDA49A;
 }
+
+.ValidationMessage {
+    color: red;
+    margin: 5px 0;
+}

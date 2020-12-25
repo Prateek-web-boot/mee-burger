@@ -184,6 +184,8 @@ class ContactData extends Component {
                         invalid={!formElement.config.valid}
                         shouldValidate={formElement.config.validation}
                         touched={formElement.config.touched}
+                        valueType = {formElement.id}
+
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
@@ -192,9 +194,17 @@ class ContactData extends Component {
         if ( this.props.loading ) {
             form = <Spinner />;
         }
+
+        let heading = <h4 style = {{fontSize: '1.6rem'}}>Enter Your Contact Details</h4>
+
+
+        if (this.props.loading) {
+            heading = ( <h3 style = {{fontSize: '30px', marginTop: '2rem', color: 'darkgreen', letterSpacing: '0.25rem'}}>Placing your order!<br/>Hold On!</h3> )
+            form = <Spinner/>;
+        }
         return (
             <div className={classes.ContactData}>
-                <h4 style = {{fontSize: '1.6rem'}}>Enter your Contact Details</h4>
+                {heading}
                 {form}
             </div>
         );

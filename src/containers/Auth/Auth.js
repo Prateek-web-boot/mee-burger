@@ -154,7 +154,7 @@ class Auth extends Component {
         let authRedirect = null;
         if (this.props.isAuthenticated) {
             authRedirect = <Redirect to={this.props.authRedirectPath}/>
-            alert('LogedIn Successfully !');
+            alert('Log-In Successfull !');
         }
 
         return (
@@ -169,7 +169,7 @@ class Auth extends Component {
                 </form>
                 <Button 
                     clicked={this.switchAuthModeHandler}
-                    btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGN-IN' : 'SIGN-UP'}</Button>
+                    btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGN-UP' : 'SIGN-IN'}</Button>
             </div>
         );
     }
